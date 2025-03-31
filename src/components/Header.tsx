@@ -11,11 +11,11 @@ export default function Header() {
       </div>
 
       <h1 className="text-5xl  tracking-tight">Get early access</h1>
-      <p className="text-zinc-500 text-l mt-2">
+      <p className="text-zinc-300 text-l mt-2">
         Orchestrating and delivering services through decentralized compute
         infrastructure
       </p>
-      <p className="text-zinc-500 text-l mt-2"> at <span className="text-white/90">5-10x lower costs</span> than the competition!</p>
+      <p className="text-zinc-300 text-l mt-2"> at <span className="text-white italic">5-10x lower costs</span> than the competition!</p>
     </div>
   );
 }

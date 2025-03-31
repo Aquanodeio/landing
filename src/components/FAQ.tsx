@@ -117,7 +117,7 @@ export default function FAQ() {
           <div
             key={index}
             className={`rounded-3xl transition-colors duration-200 ease-in-out ${
-              openIndex === index ? "bg-[#1d1c1ca8]" : ""
+              openIndex === index ? "bg-[#03081B]" : ""
             }`}
           >
             <button

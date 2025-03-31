@@ -8,7 +8,7 @@ function CardPattern() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(150.67deg, #0C1638 4.04%, #182142 18.42%, #091239 55.75%, #091441 80.64%, #06326C 106.16%)",
+            "linear-gradient(150.67deg, #060D24 4.04%, #0C1329 18.42%, #050A20 55.75%, #050B2C 80.64%, #041B3D 106.16%)",
           boxShadow: "inset 0px 4px 4px rgba(0, 0, 0, 0.25)",
         }}
       />
