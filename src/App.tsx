@@ -3,18 +3,20 @@ import WaitlistForm from "./components/WaitlistForm";
 import FeatureCards from "./components/FeatureCards";
 import FAQ from "./components/FAQ";
 import { GridBackground } from "./components/GridBackground";
-import GlobeDisplay from "./components/GlobeDisplay";
 
 function App() {
   return (
-    <div className="min-h-screen relative overflow-hidden">
-      {/* Grid Background for top part only */}
-      <div className="absolute top-0 left-0 right-0 h-[90vh] -z-10">
+    <div
+      className="min-h-screen relative overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(179.25deg, #0B1749 -10.65%, #08102C 59.71%, #03081B 130.06%)",
+      }}
+    >
+      {/* GridBackground container - extended to full page height for subtle transition */}
+      <div className="absolute inset-0 z-0">
         <GridBackground />
       </div>
-
-      {/* Gradient fade out */}
-      <div className="absolute top-[80vh] left-0 right-0 h-[30vh] bg-gradient-to-b from-transparent to-black -z-10"></div>
 
       <div className="relative z-10 px-4 py-8 text-white">
         {/* <div
@@ -31,18 +33,10 @@ function App() {
           <WaitlistForm />
           <FeatureCards />
 
-          {/* Globe section */}
-          <div className="mt-24 mb-16">
-            <h2 className="text-3xl md:text-4xl text-center mb-8 font-semibold">
-              Global On-Chain Deployments
-            </h2>
-            <GlobeDisplay />
-          </div>
-
-          <div className="bg-black pt-16">
+          <div className="pt-16">
             <FAQ />
             <div className="text-center text-zinc-400 text-sm mt-8">
-              © 2024 Splito
+              © 2025 Aquanode
             </div>
           </div>
         </div>

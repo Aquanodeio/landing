@@ -1,27 +1,34 @@
 import { cn } from "../lib/utils";
-// import React from "react";
 
 export function GridBackground() {
   return (
-    <div className="relative w-full h-full bg-black">
-      {/* Blue radial gradient */}
-      <div className="absolute inset-0 -top-2/3 bg-gradient-radial from-[#003DBD]/20 via-[#1A1DC1]/10 to-black"></div>
-
-      {/* Vertical lines only with wider spacing */}
-      <div
-        className={cn(
-          "absolute inset-0",
-          "[background-size:80px_80px]",
-          "[background-image:linear-gradient(to_right,rgba(150,150,200,0.15)_1px,transparent_1px)]",
-          "before:absolute before:inset-0 before:[background-image:linear-gradient(to_right,rgba(200,200,255,0.05)_1px,transparent_1px)] before:[background-size:80px_80px] before:blur-[0.5px] before:translate-x-[0.5px]"
-        )}
-      />
-
-      {/* Radial fade mask for lines */}
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center [mask-image:radial-gradient(ellipse_at_center,transparent_2%,black_60%)]">
-        {/* Semi-transparent overlay that gets masked */}
-        <div className="absolute inset-0 bg-gradient-radial from-transparent via-black/50 to-black"></div>
+    <div className="w-full h-full relative">
+      {/* Vertical lines with gradient */}
+      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[75%] h-full flex justify-between pointer-events-none">
+        {[...Array(4)].map((_, i) => (
+          <div
+            key={i}
+            className="w-0.5 h-full bg-gradient-to-t from-gray-100 via-gray-500 to-gray-300 opacity-5
+                      filter drop-shadow-[0_0_8px_rgba(173,216,230,0.7)]"
+          />
+        ))}
+        {[...Array(2)].map((_, i) => (
+          <div
+            key={i + 4}
+            className="hidden md:block w-0.5 h-full bg-gradient-to-t from-gray-100 via-gray-500 to-gray-300 opacity-5
+                      filter drop-shadow-[0_0_8px_rgba(173,216,230,0.7)]"
+          />
+        ))}
       </div>
+
+      {/* Super subtle fade out effect */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-full pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(to bottom, transparent 50%, #08102C 85%, #03081B 100%)",
+        }}
+      />
     </div>
   );
 }

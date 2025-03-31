@@ -1,25 +1,17 @@
 import { useMotionValue, useMotionTemplate, motion } from "motion/react";
 import { useEffect, useState } from "react";
 
-function CardPattern({ mouseX, mouseY, randomString }: any) {
-  let maskImage = useMotionTemplate`radial-gradient(250px at ${mouseX}px ${mouseY}px, white, transparent)`;
-  let style = { maskImage, WebkitMaskImage: maskImage };
-
+function CardPattern() {
   return (
     <div className="pointer-events-none">
-      <div className="absolute inset-0 rounded-2xl [mask-image:linear-gradient(white,transparent)] group-hover:opacity-50"></div>
-      <motion.div
-        className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-600 to-cyan-400 opacity-0 group-hover:opacity-100 backdrop-blur-xl transition duration-500"
-        style={style}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(150.67deg, #0C1638 4.04%, #182142 18.42%, #091239 55.75%, #091441 80.64%, #06326C 106.16%)",
+          boxShadow: "inset 0px 4px 4px rgba(0, 0, 0, 0.25)",
+        }}
       />
-      <motion.div
-        className="absolute inset-0 rounded-2xl opacity-0 mix-blend-overlay group-hover:opacity-100"
-        style={style}
-      >
-        <p className="absolute inset-x-0 text-xs h-full break-words whitespace-pre-wrap text-white font-mono font-bold transition duration-500">
-          {randomString}
-        </p>
-      </motion.div>
     </div>
   );
 }
@@ -60,28 +52,27 @@ function FeatureCard({
   }
 
   return (
-    <div className="p-0.5 bg-transparent relative">
+    <div
+      className="relative h-full box-border"
+      style={{ boxSizing: "border-box" }}
+    >
       <div
-        onMouseMove={onMouseMove}
-        className="group relative overflow-hidden bg-[#111111] rounded-2xl p-5 md:p-6 min-h-[180px] border border-zinc-800 transition duration-300 flex flex-col justify-center"
+        className="relative overflow-hidden h-full transition duration-300"
+        style={{
+          borderRadius: "30px",
+          border: "2px solid #0F5A9C",
+        }}
       >
-        <CardPattern
-          mouseX={mouseX}
-          mouseY={mouseY}
-          randomString={randomString}
-        />
+        <CardPattern />
 
-        <div className="relative z-10">
-          <div className="relative">
-            <div className="absolute inset-0 bg-black/60 blur-sm rounded-lg -m-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <h3 className="relative z-10 text-[20px] md:text-[22px] font-medium tracking-tight mb-2 text-zinc-300 group-hover:text-white transition-colors duration-300">
+        <div className="relative h-full flex flex-col p-8 z-10">
+          <div className="h-32 flex items-start">
+            <h3 className="text-3xl font-medium leading-tight text-white">
               {title}
             </h3>
           </div>
-
-          <div className="relative">
-            <div className="absolute inset-0 bg-black/60 blur-sm rounded-lg -m-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <p className="relative z-10 text-[#666666] group-hover:text-zinc-200 text-[13px] md:text-[14px] leading-relaxed transition-colors duration-300">
+          <div className="flex-1">
+            <p className="text-xl leading-relaxed text-[#a3b1d6]">
               {description}
             </p>
           </div>
@@ -93,10 +84,10 @@ function FeatureCard({
 
 export default function FeatureCards() {
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto mb-20 px-4">
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mb-20 px-8">
       <FeatureCard
         title="Multi-Provider Support"
-        description="Built on Akash, Spheron, and other decentralized networks."
+        description="Built on Akash Spheron, and other decentralized networks."
       />
       <FeatureCard
         title="10x Cost Savings"
