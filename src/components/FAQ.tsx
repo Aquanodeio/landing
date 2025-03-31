@@ -124,7 +124,7 @@ export default function FAQ() {
               className="w-full px-6 py-4 flex justify-between items-center text-left"
               onClick={() => setOpenIndex(openIndex === index ? null : index)}
             >
-              <span className="font-light text-lg text-zinc-300">
+              <span className="font-light text-lg text-zinc-200">
                 {faq.question}
               </span>
               {openIndex === index ? (
@@ -140,7 +140,7 @@ export default function FAQ() {
               }`}
             >
               <div className="overflow-hidden">
-                <div className="px-6 pb-4 text-zinc-500">{faq.answer}</div>
+                <div className="px-6 pb-4 text-zinc-400">{faq.answer}</div>
               </div>
             </div>
           </div>
