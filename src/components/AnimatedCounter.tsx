@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
-export default function AnimatedCounter({ end = 130, duration = 2000 }) {
+export default function AnimatedCounter({ end = 12, duration = 2000 }) {
   const [count, setCount] = useState(100);
 
   useEffect(() => {
     const startTime = Date.now();
-    const startValue = 100;
+    const startValue = 2;
 
     const animate = () => {
       const now = Date.now();
