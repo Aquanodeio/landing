@@ -44,7 +44,7 @@ export default function WaitlistForm() {
           },
           body: JSON.stringify({
             email: email,
-            waitlist_id: 23324,
+            waitlist_id: 26859,
           }),
         }
       );
