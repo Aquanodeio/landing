@@ -40,6 +40,14 @@ export default {
           "0%, 100%": { transform: "translateX(32px) translateY(-10px)" },
           "50%": { transform: "translateX(32px) translateY(0px)" },
         },
+        aurora: {
+          from: {
+            backgroundPosition: "100% 0%, 100% 0%",
+          },
+          to: {
+            backgroundPosition: "0% 0%, 0% 0%",
+          },
+        },
       },
       animation: {
         "float-1": "float-1 3s ease-in-out infinite",
@@ -48,6 +56,7 @@ export default {
         "float-4": "float-4 3s ease-in-out infinite",
         "float-5": "float-5 3s ease-in-out infinite",
         "float-6": "float-6 3s ease-in-out infinite",
+        aurora: "aurora 60s linear infinite",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
